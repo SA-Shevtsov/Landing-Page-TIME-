@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Mono&family=Sawarabi+Gothic&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+}
+
+.header {
+  position: fixed;
+  width: 1440px;
+  height: 50px;
+  z-index: 2;
+  display: flex;
+}
+.header .header__block-logo {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.header .header__block-logo .header__logo img {
+  height: 50px;
+}
+.header .header__block-logo .header__name {
+  font-size: 30px;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+}
+.header .header__nav {
+  width: 1140px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+.header .header__nav ul {
+  width: 1140px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .header__nav ul li {
+  list-style: none;
+  font-size: 30px;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+.header .header__nav ul li:active {
+  scale: 1.1;
+  text-shadow: 0 0 5px rgb(235, 184, 107);
+}
+
+.main .home {
+  position: relative;
+  width: 1440px;
+  height: 700px;
+  border-bottom: solid 1px rgb(235, 184, 107);
+  background-image: url("../img/main-home-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+.main .home::after {
+  content: "";
+  width: 1440px;
+  height: 700px;
+  position: absolute;
+  background-color: rgba(68, 68, 68, 0.5);
+  backdrop-filter: blur(5px);
+}
+.main .home .home__label {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  height: 200px;
+  width: 500px;
+  font-family: "Sofia Sans", sans-serif;
+  color: rgb(240, 248, 255);
+  z-index: 1;
+  user-select: none;
+  cursor: auto;
+  animation-name: label-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.main .home .home__label .home__quote {
+  font-size: 50px;
+}
+.main .home .home__label .home__author {
+  text-align: end;
+  font-size: 40px;
+  font-style: italic;
+}
+.main .home .slider {
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+  z-index: 1;
+}
+.main .home .slider .slider__wrapper {
+  position: relative;
+  display: flex;
+  animation-name: slider-wrapper;
+  animation-duration: 35s;
+  animation-iteration-count: infinite;
+}
+.main .home .slider .slider__wrapper .slider__slide img {
+  width: 500px;
+  height: 500px;
+}
+.main .home .slider_main {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  border-radius: 20px;
+  box-shadow: 0 0 100px 1px rgb(255, 255, 255);
+}
+.main .watches {
+  width: 1440px;
+  height: 750px;
+  border-bottom: solid 1px rgb(235, 184, 107);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .watches .watches__lots {
+  width: 150px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.main .watches .watches__lots .watches__lot {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: rgb(138, 138, 138);
+  transition: 0.3s;
+  font-family: "Sofia Sans", sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+.main .watches .watches__lots .watches__lot-active {
+  color: rgb(240, 248, 255);
+  text-shadow: 0 0 10px rgb(240, 248, 255);
+  transition: 0.3s;
+}
+.main .watches .watches__slider {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main .watches .watches__slider .watches__wrapper {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.main .watches .watches__slider .watches__wrapper:hover {
+  background-size: 200%;
+}
+.main .watches .watches__slider .watches__slides {
+  width: 100px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .watches .watches__slider .watches__slides:hover {
+  scale: 1.1;
+  transition: 0.3s;
+}
+.main .watches .watches__slider .watches__slides:hover .watches__slide:hover {
+  scale: 1.2;
+  transition: 0.3s;
+}
+.main .watches .watches__slider .watches__slides:hover .watches__slide:not(:hover) {
+  scale: 0.8;
+  transition: 0.3s;
+  filter: blur(3px) grayscale(100%);
+}
+.main .watches .watches__slider .watches__slides .watches__slide {
+  border-radius: 10px;
+}
+.main .watches .watches__slider .watches__slides .watches__slide:not(:hover) {
+  transition: 0.3s;
+}
+.main .watches .watches__slider .watches__slides:not(:hover) {
+  transition: 0.3s;
+}
+.main .watches .watches__slider .watches__slides .watches__slide {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+}
+.main .watches .watches__dscr {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  font-family: "Sofia Sans", sans-serif;
+  color: rgb(240, 248, 255);
+}
+.main .watches .watches__dscr .watches__name {
+  margin: 20px auto;
+  font-size: 50px;
+}
+.main .watches .watches__dscr .watches__mechanism {
+  text-align: center;
+}
+.main .watches .watches__dscr .watches__order-button {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px rgb(235, 184, 107);
+  border-radius: 10px;
+  margin: 20px auto;
+  font-size: 30px;
+  cursor: pointer;
+}
+.main .watches .watches__dscr .watches__order-button:hover {
+  background-color: rgb(235, 184, 107);
+  transition: 0.3s;
+}
+.main .watches .watches__dscr .watches__order-button:not(:hover) {
+  transition: 0.3s;
+}
+.main .watches .watches__dscr .watches__order-button:active {
+  box-shadow: 0 0 20px 1px rgb(235, 184, 107);
+  transition: none;
+}
+.main .about-us {
+  width: 1440px;
+  height: 1300px;
+  padding-top: 70px;
+  border-bottom: solid 1px rgb(235, 184, 107);
+  color: rgb(240, 248, 255);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 35px;
+  user-select: none;
+}
+.main .about-us .about-us__title {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  letter-spacing: 30px;
+}
+.main .about-us .about-us__img-block {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.main .about-us .about-us__img-block img {
+  height: 500px;
+}
+.main .about-us p {
+  padding: 30px 50px 0 50px;
+  text-align: justify;
+}
+.main .contacts {
+  width: 1440px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-bottom: solid 1px rgb(235, 184, 107);
+}
+.main .contacts .contacts__map iframe {
+  border-radius: 20px;
+}
+.main .contacts .contacts__dscr {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: rgb(240, 248, 255);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 30px;
+}
+.main .contacts .contacts__dscr .contacts__name,
+.main .contacts .contacts__dscr .contacts__work-schedule,
+.main .contacts .contacts__dscr .contacts__adress,
+.main .contacts .contacts__dscr .contacts__tel {
+  width: 400px;
+  text-align: center;
+}
+
+footer {
+  width: 1440px;
+  height: 100px;
+  display: flex;
+}
+footer img {
+  filter: invert(93%) sepia(38%) saturate(4109%) hue-rotate(307deg) brightness(96%) contrast(93%);
+}
+footer .footer__social-network {
+  width: 700px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+footer .footer__dsc {
+  width: 700px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 15px;
+}
+
+.watches__order {
+  position: fixed;
+  width: 1440px;
+  height: 700px;
+  background-color: rgba(51, 51, 51, 0.7);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watches__order .watches__order-wrapper {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+  border: solid 1px rgb(235, 184, 107);
+  border-radius: 10px;
+}
+.watches__order .watches__order-wrapper .watches__order-button-close {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 45px;
+  cursor: pointer;
+}
+.watches__order .watches__order-wrapper .form {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 30px;
+}
+.watches__order .watches__order-wrapper .form p {
+  margin-left: 15px;
+}
+.watches__order .watches__order-wrapper .form input {
+  padding: 0 15px;
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 25px;
+}
+.watches__order .watches__order-wrapper .form button {
+  margin: 0 auto;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 25px;
+  color: rgb(235, 184, 107);
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 20px;
+}
+
+.watches__order-open {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.watches__order-close {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+@keyframes label-animation {
+  0% {
+    text-shadow: 1px 1px 1px rgb(240, 248, 255);
+  }
+  50% {
+    text-shadow: 1px 1px 20px rgb(240, 248, 255);
+  }
+  100% {
+    text-shadow: 1px 1px 1px rgb(240, 248, 255);
+  }
+}
+@keyframes slider {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 100px;
+  }
+}
+@keyframes slider-wrapper {
+  0% {
+    right: 0px;
+  }
+  14% {
+    right: 0;
+  }
+  15% {
+    right: 500px;
+  }
+  28% {
+    right: 500px;
+  }
+  29% {
+    right: 1000px;
+  }
+  42% {
+    right: 1000px;
+  }
+  43% {
+    right: 1500px;
+  }
+  56% {
+    right: 1500px;
+  }
+  57% {
+    right: 2000px;
+  }
+  70% {
+    right: 2000px;
+  }
+  71% {
+    right: 2500px;
+  }
+  84% {
+    right: 2500px;
+  }
+  85% {
+    right: 3000px;
+  }
+  100% {
+    right: 3000px;
+  }
+}/*# sourceMappingURL=style.css.map */
