@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "name": "Fossil FS4656",
+        "mechanism": "кварцевый",
+        "material": "нержавеющая сталь",
+        "waterresistance": "50 м",
+        "glass": "минеральное",
+        "diameter": "42 мм",
+        "thickness": "13 мм",
+        "bracelet": "кожаный",
+        "zipper": "пряжка"
+    },
+    {
+        "id": "2",
+        "name": "Fossil JR1401",
+        "mechanism": "кварцевый",
+        "material": "нержавеющая сталь",
+        "waterresistance": "50 м",
+        "glass": "минеральное",
+        "diameter": "50 мм",
+        "thickness": "13 мм",
+        "bracelet": "металлический",
+        "zipper": "клипса"
+    },
+    {
+        "id": "3",
+        "name": "Fossil ME3061",
+        "mechanism": "механический с автоподзаводом",
+        "material": "нержавеющая сталь",
+        "waterresistance": "50 м",
+        "glass": "минеральное",
+        "diameter": "44 мм",
+        "thickness": "12 мм",
+        "bracelet": "кожаный",
+        "zipper": "пряжка"
+    },
+    {
+        "id": "4",
+        "name": "Fossil ME3061",
+        "mechanism": "кварцевый",
+        "material": "нержавеющая сталь",
+        "waterresistance": "100 м",
+        "glass": "минеральное",
+        "diameter": "45 мм",
+        "thickness": "12 мм",
+        "bracelet": "кожаный",
+        "zipper": "пряжка"
+    },
+    {
+        "id": "5",
+        "name": "Fossil FS4735",
+        "mechanism": "кварцевый",
+        "material": "нержавеющая сталь",
+        "waterresistance": "50 м",
+        "glass": "минеральное",
+        "diameter": "44 мм",
+        "thickness": "12 мм",
+        "bracelet": "кожаный",
+        "zipper": "пряжка"
+    }
+]
